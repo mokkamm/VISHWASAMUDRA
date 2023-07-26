@@ -1,0 +1,120 @@
+﻿@model VISHWASAMUDRA.Models.TestDb
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        table
+        {
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th
+        {
+            height: 20px;
+        }
+        th, td 
+        {
+            padding: 2px;
+            text-align: left;
+            border-color: lightgray;
+            text-align: center;
+            overflow-x: auto;
+            border: 1px solid;
+        }
+        tr:hover {
+            background-color: coral;
+        }
+        submit
+        {
+            padding-bottom: 40px
+        }
+    </style>
+    @using (@Html.BeginForm("Insert", "Test", FormMethod.Post))
+    {
+        <div class="col-md-10">
+            <div class="card-header" style="border-bottom: 1px solid black;width:104%">
+                <h5>
+                    <span id="header">Vehicle Type</span>
+                </h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10" style="padding-top:10px">
+                <div class="card-body">
+                    <form id="myform">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label style="font-weight:normal" class="form-label">Vehicle Name:</label>
+                                        <input type="text" name="txtvname" autocomplete="off" class="form-control" placeholder="Vehicle Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label style="font-weight:normal" class="form-label">Load Capacity (CBM):</label>
+                                        &nbsp;&nbsp;
+                                        <input type="text" name="load" autocomplete="off" class="form-control" placeholder="00">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label style="font-weight:normal" class="form-label">Record Status</label>
+                                        &nbsp;&nbsp;
+                                        @*<input type="text" name="Recordstatus" autocomplete="off" class="form-control" placeholder="Record Status">*@
+                                        <select name="language" id="language" class="form-control">
+                                            <option value="Active">Active</option>
+                                            <option value="InActive">InActive</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div style="padding-left:20px">
+                        <button type="submit" class="btn notifications btn-primary" style="float: right;padding-bottom:5px" data-align="right">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <form style="padding-top:10px">
+                <div class="form-group">
+                    &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;
+                    <table border="1" align="center">
+                        <thead>
+                            <tr style="background-color:lightgrey;width:300px" class="paginate">
+                                <th style="width:10px" >Actions</th>
+                                <th>Vehicle Id</th>
+                                <th>Vehicle Name</th>
+                                <th>Load Capacity</th>
+                                <th>Record Status</th>
+                            </tr>
+                        </thead>
+                        @foreach (var row in ViewBag.Edit.Rows)
+                        {
+                            <tbody> 
+                                <tr>
+                                    <td >
+                                     <a><i class="fa fa-edit" style="font-size:14px"></i></a>
+                                      <a><i class="fa fa-trash-o" style="font-size:15px;color:red"></i></a>  
+                                    </td>
+                                     
+                                    <td>@row["VHT_ID"]</td>
+                                    <td>@row["VH_TYPE_NAME"]</td>
+                                    <td>@row["LOAD_CAPACITY_CBM"]</td>
+                                    <td>@row["RECORD_STATUS"]</td>
+
+                                </tr>
+                            </tbody>
+                        }
+                    </table>
+                </div>
+            </form>
+        </div>
+    }
+    <!-- [ Form Validation ] end -->

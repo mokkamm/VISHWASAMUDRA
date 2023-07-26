@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+
+        <img src="~/vse.jpg" />
+        
+        <span> <i class="feather icon-user" style="text-align:right;padding-right:75%;"></i> <span id="loggedinUser" class="text"><a href="~/Login/Index" style="font-size:15px">Logout</a> </span></span>
+    </header>
+    <!-- End of Header -->
+    <!-- Left Sidebar -->
+    <nav>
+         <span class=”navbar-toggler-icon”></span>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class=”navbar-nav mr-auto" style="padding-top:20px">
+                <li class=”nav-item active"><a class=”nav-link” href="~/Login/Home">Home</a></li>
+                <li class=”nav-item active”><a class=”nav-link” href="~/Test/Index">Vehicle Type</a></li>
+            </ul>
+        </div>
+    </nav>
+    @*<nav>
+        @Html.ActionLink("Home", "Home", "Login", null, null)<br />
+        <br /><br />
+        @Html.ActionLink("Click here", // <-- Link text
+                 "Index", // <-- Action Method Name
+                 "Test", // <-- Controller Name
+                 null, // <-- Route value
+                 null // <-- htmlArguments
+                 )
+    </nav>*@
+    <!-- End of Left Sidebar -->
+    <!-- Content Body -->
+<div class="content">
+    @RenderBody()
+   
+</div>
+    <!-- End of Content Body -->
+    <!-- Footer -->
+    <footer>
+    </footer>
+    <!-- Style -->
+    <style>
+        header span a
+        {
+            color:white;
+        }
+        nav 
+        {
+            float: left;
+            width: 200px;
+            height: 555px;
+            background-color: white;
+            border: groove;
+        }
+        .content 
+        {
+            background-color: #f8f8f8;
+            top: auto;
+            height: 555px;
+            padding: 10px;
+            border: groove;
+        }
+        header
+        {
+            height: 55px;
+            width: 100%;
+            background-color: #0057ff;
+        }
+        img
+        {
+            height: 60px;
+            width: 198px;
+            border-bottom:groove;   
+        }
+        /* Set padding to keep content from hitting the edges */
+        /*  nav
+        {
+            float: left;
+            width: 200px;
+            height: 562px;
+            background-color:white;
+        }*/
+    </style>
+</body>
+</html>

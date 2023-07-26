@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="VISHWASAMUDRA.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <nav class="pcoded-navbar menupos-fixed menu-light brand-blue menu-item-icon-style6 title-blue">
+	      	<div class="navbar-wrapper ">
+			<div class="navbar-brand header-logo">
+				<a href="index.html" class="b-brand">
+					<!-- <div class="b-bg">
+					</div>
+					<span class="b-title">Flex Able</span> -->
+					<img src="../assets/images/logo.png" alt="" class="logo images">
+					<img src="../assets/images/logo-icon.png" alt="" class="logo-thumb images">
+				</a>
+				<a class="mobile-menu waves-effect waves-light"  href="#!"><span></span></a>
+			</div>
+
+
+                <div class="navbar-content scroll-div">
+				<ul class="nav pcoded-inner-navbar ">
+				<li class="nav-item pcoded-menu-caption"> 
+					<label>Home</label>
+				</li>
+                      <li class="nav-item pcoded-hasmenu pcoded-trigger">
+					<a href="#" class="nav-link waves-effect waves-light">
+						<span class="pcoded-micon">
+					       <i class="feather icon-airplay"></i>
+						</span><span class="pcoded-mtext">DocZ</span>
+					</a>
+				</ul>
+				</div>
+				  </div>
+				</nav>
+
+
+
+
+
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
