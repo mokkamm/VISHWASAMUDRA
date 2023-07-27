@@ -13,6 +13,7 @@
         {
             border-collapse: collapse;
             width: 80%;
+           
         }
         th
         {
@@ -28,7 +29,7 @@
             border: 1px solid;
         }
         tr:hover {
-            background-color: coral;
+            background-color: lightgrey;
         }
         submit
         {
@@ -82,13 +83,13 @@
                     </div>
                 </div>
             </div>
-            <form style="padding-top:10px">
+            <form  style="padding-top:10px">
                 <div class="form-group">
-                    &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;
+                 
                     <table border="1" align="center">
                         <thead>
-                            <tr style="background-color:lightgrey;width:300px" class="paginate">
-                                <th style="width:10px" >Actions</th>
+                            <tr style="background-color: lightsteelblue; width: 300px " class="paginate">
+                                <th style="width:10px">Actions</th>
                                 <th>Vehicle Id</th>
                                 <th>Vehicle Name</th>
                                 <th>Load Capacity</th>
@@ -97,13 +98,13 @@
                         </thead>
                         @foreach (var row in ViewBag.Edit.Rows)
                         {
-                            <tbody> 
+                            <tbody>
                                 <tr>
-                                    <td >
-                                     <a><i class="fa fa-edit" style="font-size:14px"></i></a>
-                                      <a><i class="fa fa-trash-o" style="font-size:15px;color:red"></i></a>  
+                                    <td>
+                                        <a><i class="fa fa-edit" style="font-size:14px"></i></a>
+                                        <a><i class="fa fa-trash-o" style="font-size:15px;color:red"></i></a>
                                     </td>
-                                     
+
                                     <td>@row["VHT_ID"]</td>
                                     <td>@row["VH_TYPE_NAME"]</td>
                                     <td>@row["LOAD_CAPACITY_CBM"]</td>
